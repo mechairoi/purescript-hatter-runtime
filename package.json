@@ -1,0 +1,16 @@
+{
+  "name": "purescript-hatter-purescript",
+  "version": "0.0.1",
+  "description": "Runtime modules for purescript-hatter",
+  "dependencies": {
+    "virtual-dom": "*",
+    "vtree": "*"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-purescript": "^0.1.1",
+    "gulp-run": "https://registry.npmjs.org/gulp-run/-/gulp-run-1.6.4.tgz",
+    "run-sequence": "^1.0.1",
+    "vinyl-source-stream": "^1.0.0"
+  }
+}

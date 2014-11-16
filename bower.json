@@ -1,0 +1,27 @@
+{
+  "name": "purescript-hatter-runtime",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mechairoi/purescript-hatter-runtime",
+  "authors": [
+    "mechairoi <ttsujikawa@gmail.com>"
+  ],
+  "keywords": [
+    "purescript",
+    "virtualdom"
+  ],
+  "license": "BSD3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "purescript-virtual-dom-typed": "*",
+    "purescript-strings": "~0.4.1"
+  },
+  "devDependencies": {
+    "purescript-quickcheck": "~0.3.0"
+  }
+}
