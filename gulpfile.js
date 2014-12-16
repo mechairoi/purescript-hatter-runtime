@@ -12,7 +12,7 @@ var paths = {
   doc: 'MODULE.md',
   bowerSrc: 'bower_components/purescript-*/src/**/*.purs',
   dest: 'output/node_modules',
-  test: 'test/**/*.purs',
+  test: 'test/**/*.purs'
 };
 
 (function() {
