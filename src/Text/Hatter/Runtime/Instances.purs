@@ -4,9 +4,6 @@ import Text.Hatter.Runtime
 import VirtualDOM.VTree
 import VirtualDOM.Typed
 
-instance idCoerce :: Coerce a a where
-  coerce = id
-
 instance stringNodeCoerce :: Coerce String VTree where
   coerce s = vtext s
 
