@@ -5,3 +5,5 @@ module Text.Hatter.Runtime
 class Coerce a b where
   coerce :: a -> b
 
+instance idCoerce :: Coerce a a where
+  coerce = id
