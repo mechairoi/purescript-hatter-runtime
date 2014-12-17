@@ -6,8 +6,7 @@ import Debug.Trace
 
 import Text.Hatter.Runtime
 import Text.Hatter.Runtime.Instances
-import VirtualDOM.VTree
-import VirtualDOM.Typed
+import VirtualDOM.VTree.Typed
 
 main = testAll
 

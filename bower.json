@@ -18,7 +18,7 @@
     "tests"
   ],
   "dependencies": {
-    "purescript-virtual-dom-typed": "*",
+    "purescript-virtual-dom-typed": "~0.1.0",
     "purescript-strings": "~0.4.1"
   },
   "devDependencies": {
