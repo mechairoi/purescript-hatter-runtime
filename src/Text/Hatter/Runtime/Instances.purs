@@ -1,19 +1,22 @@
 module Text.Hatter.Runtime.Instances where
+
+import Data.Maybe
+import qualified VirtualDOM.VTree.Typed as VT
+import qualified VirtualDOM.VTree as V
 import Text.Hatter.Runtime
 
-import qualified VirtualDOM.VTree as VT
-import VirtualDOM.VTree.Typed
+instance vtreeCoerceToVTrees :: CoerceToVTrees V.VTree where
+  coerceToVTrees a = [a]
 
--- data Empty = Emtpy
+instance maybeCoerceToVTrees :: CoerceToVTrees (Maybe V.VTree) where
+  coerceToVTrees = maybe [] $ \x -> [x]
 
--- empty :: Emtpy
--- empty = Emtpy
+instance attributesCoerceToAttributes :: CoerceToAttributes VT.Attribute where
+  coerceToAttributes a = [a]
 
-instance stringNodeCoerce :: Coerce String VT.VTree where
-  coerce s = vtext s
+instance maybeCoerceToAttributes :: CoerceToAttributes (Maybe VT.Attribute) where
+  coerceToAttributes = maybe [] $ \x -> [x]
 
-instance attributesCoerce :: Coerce Attribute [Attribute] where
-  coerce a = [a]
+instance stringVTreeCoerceToVTrees :: CoerceToVTrees String where
+  coerceToVTrees s = [VT.vtext s]
 
-instance nodesCoerce :: Coerce VT.VTree [VT.VTree] where
-  coerce a = [a]

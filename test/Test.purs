@@ -12,7 +12,7 @@ main = testAll
 
 testAll :: QC Unit
 testAll = do
-  compileOk $ (coerce "hoge" :: VTree)
+  compileOk $ (coerceToVTrees "hoge")
 
 compileOk :: forall a. a -> QC Unit
 compileOk _ = assert true
