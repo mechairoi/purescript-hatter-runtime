@@ -1,16 +1,17 @@
 {
   "name": "purescript-hatter-purescript",
-  "version": "0.0.1",
   "description": "Runtime modules for purescript-hatter",
-  "dependencies": {
-    "virtual-dom": "*",
-    "vtree": "*"
-  },
+  "private": true,
   "devDependencies": {
-    "gulp": "^3.8.10",
-    "gulp-purescript": "^0.1.1",
-    "gulp-run": "https://registry.npmjs.org/gulp-run/-/gulp-run-1.6.4.tgz",
-    "gulp-util": "^3.0.1",
-    "vinyl-source-stream": "^1.0.0"
+    "virtual-dom": "^2.1.1",
+    "jscs": "^2.9.0",
+    "jshint": "^2.9.1",
+    "pulp": "^9.0.1",
+    "rimraf": "^2.5.1"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "build": "jshint src && jscs src && pulp build",
+    "test": "pulp test"
   }
 }
