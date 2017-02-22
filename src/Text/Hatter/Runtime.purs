@@ -1,16 +1,32 @@
-module Text.Hatter.Runtime (class Coerce, coerce) where
+module Text.Hatter.Runtime
+  ( class ToVTree, toVTree
+  , Attribute(), attr
+  , unionAttributes
+  , vnode
+  , module VTree, module S
+  ) where
 
-import VirtualDOM.VTree as V
-import Prelude
+import Prelude (id, (<<<))
+import Data.Foreign (Foreign, toForeign)
+import Data.String (joinWith) as S
+import VirtualDOM.VTree (TagName, VTree, vnode) as V
+import VirtualDOM.VTree (vtext) as VTree
 
-class Coerce a b where
-  coerce :: a -> b
+foreign import unionAttributes :: Array Attribute -> forall props. { | props }
 
-instance idCoerce :: Coerce a a where
-  coerce = id
+vnode :: V.TagName -> Array Attribute -> Array V.VTree -> V.VTree
+vnode tag as vs = V.vnode tag (unionAttributes as) vs
 
-instance stringNodeCoerce :: Coerce String V.VTree where
-  coerce s = V.vtext s
+newtype Attribute = Attribute Foreign
 
-instance nodesCoerce :: Coerce V.VTree (Array V.VTree) where
-  coerce a = [a]
+attr :: forall props. { | props } -> Attribute
+attr = Attribute <<< toForeign
+
+class ToVTree a where
+  toVTree :: a -> V.VTree
+
+instance vtreeToVTree :: ToVTree V.VTree where
+  toVTree = id
+
+instance stringToVTree :: ToVTree String where
+  toVTree = VTree.vtext
