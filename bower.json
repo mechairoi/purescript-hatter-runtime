@@ -10,7 +10,7 @@
     "output"
   ],
   "dependencies": {
-    "purescript-virtual-dom": "git@github.com:mechairoi/purescript-virtual-dom.git#master",
+    "purescript-virtual-dom": "https://github.com/mechairoi/purescript-virtual-dom.git#master",
     "purescript-strings": "^2.1.0"
   },
   "devDependencies": {
