@@ -11,7 +11,8 @@
   ],
   "dependencies": {
     "purescript-virtual-dom": "https://github.com/mechairoi/purescript-virtual-dom.git#master",
-    "purescript-strings": "^2.1.0"
+    "purescript-strings": "^2.1.0",
+    "purescript-foldable-traversable": "^2.2.0"
   },
   "devDependencies": {
     "purescript-quickcheck": "^3.1.1"

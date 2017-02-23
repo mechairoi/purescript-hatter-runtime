@@ -3,7 +3,7 @@ module Test.Main where
 import Test.QuickCheck (QC, quickCheck')
 import Prelude (Unit, bind, not, ($))
 
-import Text.Hatter.Runtime (vnode, toVTree, attr)
+import Text.Hatter.Runtime (vnode, toVTree, attr, toVTrees)
 import VirtualDOM (PatchObject, diff) as V
 import VirtualDOM.VTree (vnode, vtext) as V
 
@@ -17,6 +17,10 @@ testAll = do
       (V.vnode "div" { a: true, b: 2 } [])
   assert $ not $ isEmptyPatchObject $ V.diff
       (V.vnode "div" { a: true } []) (V.vnode "div" { a: false } [])
+
+  let div = V.vnode "div" { a: true } []
+  assert $ isEmptyPatchObject $ V.diff
+    (V.vnode "div" {} (toVTrees [div, div])) (V.vnode "div" {} [div, div])
 
 compileOk :: forall a eff. a -> QC eff Unit
 compileOk _ = assert true
