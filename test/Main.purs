@@ -1,7 +1,7 @@
 module Test.Main where
 
 import Test.QuickCheck (QC, quickCheck')
-import Prelude (Unit, bind, not, ($))
+import Prelude (Unit, bind, discard, not, ($))
 
 import Text.Hatter.Runtime (vnode, toVTree, attr, toVTrees)
 import VirtualDOM (PatchObject, diff) as V

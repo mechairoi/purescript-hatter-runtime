@@ -1,5 +1,7 @@
-/bower_components
-/node_modules
-/.psci_modules
-/output
-/npm-debug.log
+/.*
+!/.gitignore
+!/.eslintrc.json
+!/.travis.yml
+/bower_components/
+/node_modules/
+/output/
